@@ -1,0 +1,124 @@
+<script src="https://kit.fontawesome.com/5954230aac.js" crossorigin="anonymous"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+        <nav>
+            <img src="img/logo.png" class="logopng" alt="logo" width="200px">
+
+         <ul>
+            <li><a href="#about1">About</a></li>
+            <li><a href="#bhasa">My Languaes</a></li>
+            <li><a href="#project">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+         </ul>
+        </nav>
+
+        <main>
+        
+            <div class="about1">
+                <p>Newbie</p>
+                <h1>Hey! Myself Ravi</h1>
+                <h2>Im currenly learning HTML and CSS</h2>
+                <p1>N un bosque espeso,
+                    los árboles altos se alzan majestuosamente.
+    <br>
+                    La luz del sol se filtra a través de las hojas,
+                    creando un juego de sombras en el suelo.
+                    <br>
+                    El canto de los pájaros llena el aire,
+                    mientras una suave brisa acaricia el rostro.</p1>
+                    <img src='img/PFPPP.jpg' alt="png" class="pfppp" width="300px">
+            </div>
+               </div>
+
+               <div id="bhasa">
+                <div class="language">
+                    <div class="col2">
+                        <h1>My languages</h1>
+                        </div>
+                    <div class="col1">
+                        <img src="img/js.webp" alt="js" width="400px" class="jspng">
+                        <img src="img/html.webp" alt="html" class="htmlpng" width="400px">
+                        <img src="img/css.webp" alt="css" class="csspng" width="400px">
+                    </div>
+
+                   
+
+                    
+                        </div>
+
+                    </div>
+
+                </div>
+               </div>
+<div id="project">
+               <div class="projects">
+                <h1 class="h1h1">My projects!</h1>
+</div>
+                <div class="portdesc">
+                    <h2>None for now</h2>
+</div>
+</div>
+        </main>
+
+    </header>
+
+<footer>
+    <div id="contact">
+        <div class="footinfo">
+            <h1 class="contactt">Contact me!</h1>
+            <p><i class="fa-solid fa-envelope"></i> ravinishprakash@gmail.com
+                <br>
+                <i class="fa-solid fa-phone"></i> 9999999999
+            </p>
+            <div class="socialicons">
+                <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-discord"></i></a>
+                
+            </div>
+        </div>
+
+        <div class="form1">
+        <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your name" required>
+            <input type="email" name="Email" placeholder="Your email" required>
+            <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+            <button type="submit" class="buttonsbmt">Submit</button>
+        </form>
+        <span id="msg">Done</span>
+    </div>
+    </div>
+</footer>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxtTk0SqYU-FpUlgIPHgiSbUzVcD5OaReIYne2kJrE0oi3-a9WzBcTXga-e_v5vo8hk/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById('msg')
+  
+    form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML= 'Message sent successfully'
+        setInterval(function(){
+            msg.innerHTML = ''
+        }, 5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
